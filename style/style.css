@@ -1,0 +1,215 @@
+**, *::before, *::after
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* "biblioteca" de padronização */
+:root {
+    /*
+    :hover usuario passou o cursor por cima(interage) 
+    :focus é um elemento de acessibilidade , aquilo que trocs usando tab 
+    :focus-within: mbotar mais de um conteudo no focus
+    input:focus quero mexer no focus dentro dessa classe
+    :activate exato momento do clique(por exemplo button)
+    :disable o elemento nao pode interagir sem q tenha feito todos os requisitos*/
+
+    --bg-primary: #f7f4ed; /*bg*/
+    --bg-secondary: #fffefa;
+    --bg-tertiary: #efeade;
+    --bg-elevated: #ffffff;
+
+    --text-primary: #1a1612; /*txt*/
+    --text-secondary: #52463a;
+    --text-tertiary: #8a7a68;
+    --text-inverse: #f7f4ed;
+
+    --border-subtle: #e4dcc9;
+    --border-medium: #c9bfa8;
+    --border-strong: #1a1612;
+
+    --accent: #c2410c; /*primary*/
+    --accent-hover: #9a330a;
+    --accent-soft: #fef3e8;
+
+    --wrong: #b91c1c;
+    --wrong-soft: #fde8e8;
+    --hard: #c2410c;
+    --hard-soft: #fef3e8;
+    --good: #0f766e;
+    --good-soft: #e6f4f1;
+    --easy: #365314;
+    --easy-soft: #eef5e3;
+
+    --font-display: 'Fraunces', Georgia, serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+
+    --max-width: 1200px;
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --shadow-sm: 0 1px 2px rgba(26, 22, 18, 0.04), 0 2px 4px rgba(26, 22, 18, 0.04);
+    --shadow-md: 0 4px 6px rgba(26, 22, 18, 0.05), 0 10px 15px rgba(26, 22, 18, 0.06);
+    --shadow-lg: 0 10px 20px rgba(26, 22, 18, 0.06), 0 20px 40px rgba(26, 22, 18, 0.08);
+    --shadow-card: 0 1px 3px rgba(26, 22, 18, 0.05), 0 4px 12px rgba(26, 22, 18, 0.04);
+    --trans-fast: 150ms ease;
+    --trans-medium: 280ms cubic-bezier(0.4, 0, 0.2, 1);
+    --trans-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body{
+    background-color: var(--bg-primary);
+    font-family: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    font-family: 'Inter', -apple-system, Arial, sans-serif; /* se a inter falhar usa a arial */
+}
+
+.container{
+    width: 100%;
+    height:100%;
+}
+
+h1,h2,h3{
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+h1{
+    font-size: 2.5rem;
+    color: var(--accent);
+}
+
+p{
+    color: var(--text-secundary);
+    margin-bottom: 1.5rem;
+}
+
+.search-container{
+    display: flex;
+    align-items: center;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding:0.5rem 1rem;
+    margin-bottom: 2rem;
+    transition: all var(--trans-fast);;
+}
+
+.search-container:focus-within{
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.search-container input{
+    border:none;
+    outline: none;
+    width: 100%;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--text-primary);
+    background: transparent;
+}
+
+/* header
+{
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    padding:  10px 120px;
+    align-items: center;
+} */
+
+.title
+{
+    width: 200px;
+}
+
+.nav-princiopal
+{
+    width: 300px;
+}
+.buttons
+{
+    width: 200px;
+}
+
+.flashcard {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 2rem;
+    box-shadow: var(--shadow-card);
+    margin-bottom: 2rem;
+}
+
+.flashcard-category {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem; /* espaçamento entre as letras */
+    color: var(--accent);
+    font-weight: 600; /* grossura do peso */
+    margin-bottom: 1rem;
+    display: block;
+    background-color: var(--bg-tertiary);
+    width: fit-content; /* fit-content -> significa ajustar conteúdo */
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--radius-md);
+}
+
+.flashcard-question {
+    font-size: 1.5rem;
+    line-height: 1.4rem; /* altura da linha */
+    margin-bottom: 1.5rem;
+}
+
+.bnt-primary {
+    display: inline-block; /* inline -> permitem que vários elementos fiquem na mesma linha; block -> o elemento ocupa toda a linha; */
+    background-color: var(--accent);
+    color: var(--text-inverse);
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+
+    transition:
+    background-color var(--trans-medium),
+    transform var(--trans-medium),
+    box-shadow var(--trans-medium);
+}
+
+.bnt-primary:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px); /* mover em relação ao eixo y */
+    box-shadow: var(--shadow-md);
+}
+
+.bnt-primary:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+.bnt-primary:focus-visible { /* outline -> fora da linha (???)*/
+    outline: 2px solid var(--accent-hover);
+    outline-offset: 2px;
+}
+
+/* margin é o espaçamento por fora e padding é o espaçamento de dentro */
+/* em -> se baseia no último tamanho(px) */
+/* sticky -> significa que vai ficar colada na tela, e sempre no topo (top 0)*/
+/* z-index -> define a posição da nav bar (camada) */
+/* .algo significa que algo é uma classe de div */
+/* width -> largura */
+/* 1 rem é equivalente 16px */
