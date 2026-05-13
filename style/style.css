@@ -1,5 +1,4 @@
-**, *::before, *::after
-{
+**, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -7,14 +6,6 @@
 
 /* "biblioteca" de padronização */
 :root {
-    /*
-    :hover usuario passou o cursor por cima(interage) 
-    :focus é um elemento de acessibilidade , aquilo que trocs usando tab 
-    :focus-within: mbotar mais de um conteudo no focus
-    input:focus quero mexer no focus dentro dessa classe
-    :activate exato momento do clique(por exemplo button)
-    :disable o elemento nao pode interagir sem q tenha feito todos os requisitos*/
-
     --bg-primary: #f7f4ed; /*bg*/
     --bg-secondary: #fffefa;
     --bg-tertiary: #efeade;
@@ -118,17 +109,6 @@ p{
     background: transparent;
 }
 
-/* header
-{
-    position: sticky;
-    top: 0;
-    z-index: 2;
-    display: flex;
-    justify-content: space-between;
-    padding:  10px 120px;
-    align-items: center;
-} */
-
 .title
 {
     width: 200px;
@@ -173,7 +153,7 @@ p{
 }
 
 .bnt-primary {
-    display: inline-block; /* inline -> permitem que vários elementos fiquem na mesma linha; block -> o elemento ocupa toda a linha; */
+    display: inline-block;
     background-color: var(--accent);
     color: var(--text-inverse);
     font-family: var(--font-body);
@@ -201,15 +181,7 @@ p{
     box-shadow: none;
 }
 
-.bnt-primary:focus-visible { /* outline -> fora da linha (???)*/
+.bnt-primary:focus-visible {
     outline: 2px solid var(--accent-hover);
     outline-offset: 2px;
 }
-
-/* margin é o espaçamento por fora e padding é o espaçamento de dentro */
-/* em -> se baseia no último tamanho(px) */
-/* sticky -> significa que vai ficar colada na tela, e sempre no topo (top 0)*/
-/* z-index -> define a posição da nav bar (camada) */
-/* .algo significa que algo é uma classe de div */
-/* width -> largura */
-/* 1 rem é equivalente 16px */
