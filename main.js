@@ -21,7 +21,7 @@ const resultado = IMC
 alert(resultado)
 */
 
-function searchFlashcards(e) {
+/*function searchFlashcards(e) {
     console.log("e.target.value")
 }
 
@@ -33,4 +33,19 @@ function showResult() {
                 <h2 class = "flashcard-question">Qual é a função do Flexblox no CSS?</h2>
                 <button onclick="main()" class = "bnt-primary" arial-label = "Mostrar resposta">Mostrar resposta</button>
             </article>`
-}
+}*/
+
+document.addEventListener("DOMContentLoaded", () => {
+    const themeButton = document.querySelector("#themeToggle"); // buscando botão pelo ID
+    const bodyElement = document.querySelector("body"); // selecionando tag body, onde o estado visual deve estar injetado
+
+    themeButton.addEventListener("click", () => { // registrando evento de click
+        bodyElement.classList.toggle("dark-mode"); // se existir, toggle remove. se não, toggle adiciona
+        
+        if(bodyElement.classList.contains("dark-mode")) { // atualizando o texto do botão de acordo com seu estado
+            themeButton.textContent = "Modo Escuro";
+        } else {
+            themeButton.textContent = "Modo Claro";
+        }
+    });
+});
